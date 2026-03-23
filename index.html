@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noir Café — Onde o tempo para</title>
+
+  <!-- Google Fonts: display + corpo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+</head>
+
+<body>
+
+  <!-- ========================================================
+       CURSOR PERSONALIZADO
+  ======================================================== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ========================================================
+       NAVEGAÇÃO
+  ======================================================== -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav__logo">Noir<span>.</span></a>
+    <ul class="nav__links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#ambiente">Ambiente</a></li>
+      <li><a href="#contato">Reservar</a></li>
+    </ul>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ========================================================
+       HERO — Tela inicial
+  ======================================================== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__grain"></div>
+      <div class="hero__circle hero__circle--1"></div>
+      <div class="hero__circle hero__circle--2"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal-up" style="--delay:.1s">Desde 1987 · São Paulo</p>
+      <h1 class="hero__title">
+        <span class="reveal-up" style="--delay:.25s">Onde cada</span>
+        <em class="reveal-up" style="--delay:.4s">gole conta</em>
+        <span class="reveal-up" style="--delay:.55s">uma história</span>
+      </h1>
+      <p class="hero__sub reveal-up" style="--delay:.7s">
+        Cafés de origem única, torrados com precisão e servidos com alma.
+      </p>
+      <div class="hero__actions reveal-up" style="--delay:.85s">
+        <a href="#menu" class="btn btn--primary">Explorar o menu</a>
+        <a href="#sobre" class="btn btn--ghost">Nossa história →</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <span>scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SOBRE — Filosofia da casa
+  ======================================================== -->
+  <section class="about" id="sobre">
+    <div class="about__grid">
+      <div class="about__image-wrap">
+        <div class="about__image">
+          <div class="about__image-inner"></div>
+        </div>
+        <div class="about__badge">
+          <svg viewBox="0 0 220 220" class="about__badge-ring" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <path id="badgePath" d="M 110,110
+           m -72,0
+           a 72,72 0 1,1 144,0
+           a 72,72 0 1,1 -144,0" />
+            </defs>
+
+            <text text-anchor="middle">
+              <textPath href="#badgePath" startOffset="50%">
+                TORRADO COM AMOR · SERVIDO COM ALMA ·
+              </textPath>
+            </text>
+          </svg>
+
+          <span class="about__badge-icon">☕</span>
+        </div>
+      </div>
+
+      <div class="about__text">
+        <p class="section-label">Nossa filosofia</p>
+        <h2 class="section-title">O café como<br /><em>ritual</em></h2>
+        <p class="about__desc">
+          Acreditamos que uma boa xícara de café é mais do que uma bebida —
+          é um momento de presença. Selecionamos grãos de altitude de pequenos
+          produtores brasileiros e os toramos lentamente para extrair toda a
+          complexidade que a natureza escondeu neles.
+        </p>
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__num" data-target="37">0</span>
+            <span class="stat__label">Anos de história</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="12">0</span>
+            <span class="stat__label">Origens de grão</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-target="98">0</span>
+            <span class="stat__label">% satisfação</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       MENU — Destaques do cardápio
+  ======================================================== -->
+  <section class="menu" id="menu">
+    <div class="menu__header">
+      <p class="section-label">Cardápio</p>
+      <h2 class="section-title">Nossas<br /><em>especialidades</em></h2>
+    </div>
+
+    <div class="menu__tabs">
+      <button class="tab active" data-tab="cafes">Cafés</button>
+      <button class="tab" data-tab="doces">Doces</button>
+      <button class="tab" data-tab="especiais">Especiais</button>
+    </div>
+
+    <div class="menu__grid" id="menuGrid">
+      <!-- Preenchido via JS -->
+    </div>
+  </section>
+
+  <!-- ========================================================
+       AMBIENTE — Galeria
+  ======================================================== -->
+  <section class="ambient" id="ambiente">
+    <div class="ambient__header">
+      <p class="section-label">Ambiente</p>
+      <h2 class="section-title">Um lugar para<br /><em>desacelerar</em></h2>
+    </div>
+    <div class="ambient__marquee">
+      <div class="marquee__track" id="marqueeTrack">
+        <div class="marquee__item marquee__item--1"></div>
+        <div class="marquee__item marquee__item--2"></div>
+        <div class="marquee__item marquee__item--3"></div>
+        <div class="marquee__item marquee__item--4"></div>
+        <div class="marquee__item marquee__item--1"></div>
+        <div class="marquee__item marquee__item--2"></div>
+        <div class="marquee__item marquee__item--3"></div>
+        <div class="marquee__item marquee__item--4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       DEPOIMENTOS
+  ======================================================== -->
+  <section class="testimonials">
+    <div class="testimonials__inner">
+      <p class="section-label">O que dizem</p>
+      <div class="testimonials__slider" id="testimonialSlider">
+        <div class="testimonial active">
+          <p class="testimonial__text">"O melhor espresso que já tomei fora da Itália. A crema perfeita, o amargor
+            equilibrado — voltei no dia seguinte."</p>
+          <span class="testimonial__author">— Mariana C., arquiteta</span>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial__text">"O ambiente tem uma calma rara em São Paulo. Venho trabalhar aqui toda semana. O
+            flat white é impecável."</p>
+          <span class="testimonial__author">— Rafael T., designer</span>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial__text">"Découverte incroyable. Le café de spécialité servi avec une vraie passion. Je
+            recommande le café do Cerrado."</p>
+          <span class="testimonial__author">— Claire B., jornalista</span>
+        </div>
+      </div>
+      <div class="testimonials__dots" id="testimonialDots"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CONTATO / RESERVA
+  ======================================================== -->
+  <section class="contact" id="contato">
+    <div class="contact__grid">
+      <div class="contact__info">
+        <p class="section-label">Visite-nos</p>
+        <h2 class="section-title">Reserve sua<br /><em>mesa</em></h2>
+        <ul class="contact__details">
+          <li><span>📍</span> Rua Augusta, 1209 — Consolação, SP</li>
+          <li><span>🕐</span> Seg–Sex: 7h–21h · Sáb–Dom: 8h–22h</li>
+          <li><span>📞</span> (11) 3456-7890</li>
+          <li><span>✉</span> ola@noircafe.com.br</li>
+        </ul>
+      </div>
+      <form class="contact__form" id="contactForm">
+        <div class="form-group">
+          <input type="text" id="nome" placeholder=" " required />
+          <label for="nome">Seu nome</label>
+        </div>
+        <div class="form-group">
+          <input type="email" id="email" placeholder=" " required />
+          <label for="email">E-mail</label>
+        </div>
+        <div class="form-group">
+          <input type="date" id="data" placeholder=" " required />
+          <label for="data">Data da visita</label>
+        </div>
+        <div class="form-group">
+          <select id="pessoas" required>
+            <option value="" disabled selected></option>
+            <option>1 pessoa</option>
+            <option>2 pessoas</option>
+            <option>3–4 pessoas</option>
+            <option>5+ pessoas</option>
+          </select>
+          <label for="pessoas">Número de pessoas</label>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">
+          Confirmar reserva
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       RODAPÉ
+  ======================================================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span class="footer__logo">Noir<em>.</em></span>
+      <p>© 2024 Noir Café · Feito com ☕ em São Paulo</p>
+      <div class="footer__social">
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Spotify</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/cursor.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/testimonials.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/stats.js"></script>
+</body>
+
+</html>

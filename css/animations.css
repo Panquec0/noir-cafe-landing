@@ -1,0 +1,85 @@
+/* ============================================================
+   ANIMATIONS — Keyframes e classes de animação de entrada
+   Todas as animações do site moram aqui.
+   As classes .reveal-up são ativadas via IntersectionObserver (JS).
+============================================================ */
+
+/* --- Fade + subida: elemento padrão de entrada --- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Fade simples --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* --- Expansão horizontal: usado na linha do scroll indicator --- */
+@keyframes expandX {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* --- Rotação infinita: badge circular "torrado com amor" --- */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Pulso suave: cursor follower --- */
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: .6; }
+  50%       { transform: translate(-50%,-50%) scale(1.4); opacity: .3; }
+}
+
+/* --- Flutuação vertical: elementos decorativos do hero --- */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33%       { transform: translateY(-18px) rotate(3deg); }
+  66%       { transform: translateY(10px) rotate(-2deg); }
+}
+
+/* --- Marquee/scroll horizontal infinito --- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* --- Número contador: slide suave para cima --- */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Classes utilitárias de reveal ---- */
+
+/* Estado inicial: invisível e deslocado */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out-expo),
+    transform var(--dur-slow) var(--ease-out-expo);
+  transition-delay: var(--delay, 0s);
+}
+
+/* Estado final: visível — adicionada pelo IntersectionObserver */
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variante: fade lateral para cards */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out-expo),
+    transform var(--dur-slow) var(--ease-out-expo);
+  transition-delay: var(--delay, 0s);
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
